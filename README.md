@@ -66,6 +66,7 @@ $ sudo wget -O .config https://github.com/PINTO0309/wsl2_linux_kernel_usbcam_ena
   && sudo chmod 777 .config \
   && sudo make clean
 
+# nproc is the number of core, run getconf _NPROCESSORS_ONLN to get the number of core
 $ sudo make -j$(nproc) KCONFIG_CONFIG=.config \
   && sudo make modules_install -j$(nproc) \
   && sudo make install -j$(nproc)
